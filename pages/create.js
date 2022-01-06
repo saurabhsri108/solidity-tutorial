@@ -1,10 +1,14 @@
 import { ethers } from 'ethers';
 import Router from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Keyboard from '../components/keyboard';
 import PrimaryButton from '../components/primary-button';
 import getKeyboardsContract from '../utils/getKeyboardsContract';
+import { useMetaMaskAccount } from '../components/meta-mask-account-provider';
 import abi from '../utils/Keyboards.json';
+
+const contractAddress = '0xe8FcD170584f38450d3F3902D67e2e559c822890';
+const contractABI = abi.abi;
 
 export default function Create() {
   const { ethereum, connectedAccount, connectAccount } = useMetaMaskAccount();
